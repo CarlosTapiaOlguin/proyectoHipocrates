@@ -1,0 +1,90 @@
+<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+    <div class="overlay">
+        <div class="container">
+            <h1 class="entry-title">Reserva de horas</h1>
+            <p>Para reservar seleccione el tipo de prestacion, si es consulta debe seleccionar el profesional, si es
+                examen el tipo de examen a realizar.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="appointment-sec text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <figure><img src="public/image/appointment-img.jpg" alt="image" title="Appointment image"
+                             class="img-responsive lady1"></figure>
+            </div>
+            <div class="col-md-6">
+                <div class="appointment-form clearfix">
+                    <div class="form-group">
+                        <label for="inputPrestacion" class="col-md-6 control-label">TIPO PRESTACION</label>
+                        <div>
+                            <select id="inputPrestacion" ng-model="prestacionSeleccionada" ng-change="logicaPrestacion()">
+                                <option id="CONSULTA">CONSULTA MEDICA</option>
+                                <option id="EXAMEN">EXAMEN DE LABORATORIO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="tipoProfesional" class="form-group">
+                        <label for="inputProfecional" class="col-md-6 control-label">PROFESIONAL</label>
+                        <div>
+                            <select id="inputProfecional">
+                                <option ng-repeat="doctor in doctors" value="{{id}}">
+                                    {{doctor.nombreCompleto}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="tipoPrestacion" class="form-group">
+                        <label for="inputExamen" class="col-md-6 control-label">EXAMEN</label>
+                        <div>
+                            <select id="inputExamen">
+                                <option>ENDOSCOPIA</option>
+                                <option>ENDOSCOPIA</option>
+                                <option>ENDOSCOPIA</option>
+                                <option>ENDOSCOPIA</option>
+                                <option>ENDOSCOPIA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <input type="text" placeholder="Nombre">
+                    <input type="text" placeholder="Rut">
+                    <input type="email" placeholder="Correo">
+                    <input type="text" placeholder="Telefono">
+                    <input type="text" id="datepicker" placeholder="Fecha">
+                    <select id="selectHora">
+                        <option>9:30</option>
+                        <option>9:30</option>
+                        <option>9:30</option>
+                        <option>9:30</option>
+                        <option>9:30</option>
+                    </select>
+                    <textarea placeholder="Mensaje"></textarea>
+                    <input type="submit" value="Enviar" class="btn btn-default btn-rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="after-booking-sec text-center">
+    <div class="container">
+        <h1>Despues de reservar</h1>
+        <p class="lead">Al finalizar su reserva, recibira un correo con la información de su reserva, 24 horas antes de esta un
+        ejecutivo se comunicara para confirmar.</p>
+        <ul class="medicom-feature-list list-inline text-left">
+            <li><i class="fa fa-check medicom-check"></i>Profesionales capacitados en todas las areas.</li>
+            <li><i class="fa fa-check medicom-check"></i>Equipo medico de ultima generacion.</li>
+            <li><i class="fa fa-check medicom-check"></i>Historial medico.</li>
+            <li><i class="fa fa-check medicom-check"></i>Comprometidos con su bienestar.</li>
+        </ul>
+    </div>
+</section>
+
+
+<div class="colourfull-row"></div>
