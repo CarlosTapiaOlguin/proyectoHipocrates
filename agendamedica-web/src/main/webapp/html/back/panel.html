@@ -1,0 +1,28 @@
+<div class="col-md-12">
+    <div class="widget bg-primary">
+        <div class="widget-bg-icon">
+            <i class="fa fa-bookmark-o"></i>
+        </div>
+        <div class="widget-details">
+            <h4 class="no-margin">Próximas Atenciones</h4>
+            <!--span>Parks and recreation</span-->
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-4" ng-repeat="atencion in atenciones" id="card{{atencion.id}}">
+    <div class="panel">
+        <div class="panel-body">
+            <h3 class="mt0 mb0">Proxima Atención</h3>
+            <p class="text-muted">{{atencion.agenda.fecha}}</p>
+            <p><b>Doctor :</b> {{atencion.agenda.doctor.usuario.nombres}} {{atencion.agenda.doctor.usuario.apellidoPaterno}}</p>
+            <p><b>Especialidad :</b> {{atencion.agenda.doctor.especialidad.nombre}}</p>
+            <p><b>Fecha :</b> {{atencion.agenda.fecha}}</p>
+            <p><b>Hora :</b> {{atencion.agenda.turno.horaInicio}} - {{atencion.agenda.turno.horaFin}}</p>
+            <button type="button" class="btn btn-danger btn-sm btn-icon mr5" ng-click="anularHora(atencion.id);">
+                <i class="fa fa-exclamation-triangle"></i>
+                <span>Anular</span>
+            </button>
+        </div>
+    </div>
+</div>

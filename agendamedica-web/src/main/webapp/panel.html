@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Centro Médico Hipócrates</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="public/favicon.ico">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- page level plugin styles -->
+    <link rel="stylesheet" href="public/styles/climacons-font.css">
+    <link rel="stylesheet" href="public/vendor/rickshaw/rickshaw.min.css">
+    <!-- /page level plugin styles -->
+
+    <!-- build:css({.tmp,app}) styles/app.min.css -->
+    <link rel="stylesheet" href="public/vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="public/vendor/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="public/styles/roboto.css">
+    <link rel="stylesheet" href="public/styles/font-awesome.css">
+    <link rel="stylesheet" href="public/styles/panel.css">
+    <link rel="stylesheet" href="public/styles/feather.css">
+    <link rel="stylesheet" href="public/styles/animate.css">
+    <link rel="stylesheet" href="public/styles/urban.css">
+    <link rel="stylesheet" href="public/styles/urban.skins.css">
+    <link rel="stylesheet" href="public/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="public/css/app.css" >
+    <!-- endbuild -->
+
+</head>
+
+<body ng-app="app">
+<div class="app layout-fixed-header">
+
+    <!-- sidebar panel -->
+    <div class="sidebar-panel offscreen-left">
+
+        <div class="brand">
+
+            <!-- logo -->
+            <div class="brand-logo">
+                <img src="images/logo.png" height="15" alt="">
+            </div>
+            <!-- /logo -->
+
+            <!-- toggle small sidebar menu -->
+            <a href="javascript:;" class="toggle-sidebar hidden-xs hamburger-icon v3" data-toggle="layout-small-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <!-- /toggle small sidebar menu -->
+
+        </div>
+
+        <!-- main navigation -->
+        <nav role="navigation">
+
+            <ul class="nav">
+                <li>
+                    <a href="#/panel">
+                        <i class="fa fa-bank"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/reservarConsulta">
+                        <i class="fa fa-clock-o"></i>
+                        <span>Reserva Consulta Médica</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/historial">
+                        <i class="fa fa-history"></i>
+                        <span>Historial de atenciones</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /main navigation -->
+
+    </div>
+    <!-- /sidebar panel -->
+
+    <!-- content panel -->
+    <div class="main-panel">
+
+        <!-- top header -->
+        <header class="header navbar">
+
+            <div class="brand visible-xs">
+                <!-- toggle offscreen menu -->
+                <div class="toggle-offscreen">
+                    <a href="#" class="hamburger-icon visible-xs" data-toggle="offscreen" data-move="ltr">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+                <!-- /toggle offscreen menu -->
+
+                <!-- logo -->
+                <div class="brand-logo">
+                    <img src="images/logo-dark.png" height="15" alt="">
+                </div>
+                <!-- /logo -->
+
+
+            </div>
+
+            <ul class="nav navbar-nav hidden-xs">
+                <li>
+                    <p class="navbar-text">
+
+                    </p>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right hidden-xs">
+
+                <li>
+                    <a href="javascript:;" data-toggle="dropdown">
+                        <span id="rutUsuario"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a onclick="cerrarSession();">Salir</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+            </ul>
+        </header>
+        <!-- /top header -->
+        <div class="main-content" ng-view>
+
+        </div>
+
+    </div>
+
+
+    <!-- /content panel -->
+
+    <!-- bottom footer -->
+    <footer class="content-footer">
+
+        <nav class="footer-right">
+            <ul class="nav">
+                <li>
+                    <a href="javascript:;">Feedback</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="scroll-up">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="footer-left">
+            <ul class="nav">
+                <li>
+                    <a href="javascript:;">Copyright <i class="fa fa-copyright"></i> <span>Hipócrates</span> 2016. Derechos Reservados</a>
+                </li>
+            </ul>
+        </nav>
+
+    </footer>
+    <!-- /bottom footer -->
+</div>
+
+
+</body>
+<!-- ANGULARJS -->
+<script type="text/javascript" src="public/js/angular/angular.min.js"></script>
+<script type="text/javascript" src="public/js/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="public/js/angular/app/back/app.js"></script>
+<script type="text/javascript" src="public/js/angular/controllers/back/controllers.js"></script>
+<script type="text/javascript" src="public/js/angular/services/services.js"></script>
+<!---->
+
+<!-- build:js({.tmp,app}) scripts/app.min.js -->
+<script src="public/scripts/extentions/modernizr.js"></script>
+<script src="public/vendor/jquery/dist/jquery.js"></script>
+<script src="public/vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/vendor/jquery.easing/jquery.easing.js"></script>
+<script src="public/vendor/fastclick/lib/fastclick.js"></script>
+<script src="public/vendor/onScreen/jquery.onscreen.js"></script>
+<script src="public/vendor/jquery-countTo/jquery.countTo.js"></script>
+<script src="public/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+<script src="public/scripts/ui/accordion.js"></script>
+<script src="public/scripts/ui/animate.js"></script>
+<script src="public/scripts/ui/link-transition.js"></script>
+<script src="public/scripts/ui/panel-controls.js"></script>
+<script src="public/scripts/ui/preloader.js"></script>
+<script src="public/scripts/ui/toggle.js"></script>
+<script src="public/scripts/urban-constants.js"></script>
+<script src="public/scripts/extentions/lib.js"></script>
+<script type="text/javascript" src="public/js/angular/app/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="public/js/angular/app/mensaje.js"></script>
+<!-- endbuild -->
+<script src="public/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+</html>

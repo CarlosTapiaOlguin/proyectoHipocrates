@@ -1,0 +1,67 @@
+<div class="panel">
+    <div class="panel-heading border">
+        RESERVA MÉDICA
+    </div>
+    <div class="panel-body mb25">
+        <div class="row no-margin">
+            <div class="col-lg-12">
+                <form class="form-horizontal bordered-group" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Especialidad Médica</label>
+                        <div class="col-sm-6">
+                            <select class="form-control chosen" style="width: 100%;"
+                                    id="inputEspecialidad"
+                                    name="inputEspecialidad"
+                                    ng-model="especialidadSeleccionada"
+                                    ng-change="actualizarEspecialidad();">
+                                <option ng-repeat="esp in especialidadesMedicas" value="{{esp.doctores}}">
+                                    {{esp.nombre | uppercase}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Profesional</label>
+                        <div class="col-sm-6">
+                            <select class="form-control chosen" style="width: 100%;"
+                                    id="inputProfesional"
+                                    name="inputProfesional"
+                                    ng-model="profesionalSeleccionado"
+                                >
+                                <option ng-repeat="usuario in doctoresPorEspecialidad" value="{{usuario.id}}">
+                                    {{usuario.nombres +" "+ usuario.apellidoPaterno +" "+ usuario.apellidoMaterno | uppercase}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Fecha</label>
+                        <div class="col-sm-6">
+                            <input id="fechaSeleccionada" type="text" class="form-control mb25" data-provide="datepicker">
+                            <div data-provide="datepicker-inline"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-primary button-next" ng-click="buscar();">Buscar</button>
+                        </div>
+                    </div>
+                    <div class="form-group" id="horasDisponibles">
+                        <label class="col-sm-2 control-label">Horas Disponibles</label>
+                        <div class="col-sm-6">
+                            <select class="form-control chosen" style="width: 100%;"
+                                    id="horaSeleccionada"
+                                    name="horaSeleccionada"
+                                    ng-model="horaSeleccionada">
+                                <option ng-repeat="hr in horasDisponibles" value="{{hr.id}}">
+                                    {{hr.turno.horaInicio}} - {{hr.turno.horaFin}}
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary button-next" ng-click="reservar();">Reservar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

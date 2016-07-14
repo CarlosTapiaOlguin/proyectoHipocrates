@@ -1,0 +1,115 @@
+
+<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+    <div class="overlay">
+        <div class="container">
+            <h1 class="entry-title">Registro</h1>
+            <p>Registrándote puedes ver tus exámenes, reservar horas y ver tus atenciones</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="appointment-sec text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <figure><img src="public/image/appointment-img.jpg" alt="image" title="Appointment image"
+                             class="img-responsive lady1"></figure>
+            </div>
+            <div class="col-md-6">
+                <form id="fomularioRegistro">
+                <div class="appointment-form clearfix">
+                    <input type="text" placeholder="Nombres" id="nombres" name="nombres" ng-model="paciente.usuario.nombres" class="col-md-6"  required>
+                    <input type="text" placeholder="Apellido Paterno" id="apellidoPaterno" name="apellidoPaterno" ng-model="paciente.usuario.apellidoPaterno"  required>
+                    <input type="text" placeholder="Apellido Materno" id="apellidoMaterno" name="apellidoMaterno" ng-model="paciente.usuario.apellidoMaterno"  required>
+                    <input type="text" placeholder="Telefono" name="telefono" id="telefono" ng-model="paciente.usuario.telefono"  required>
+                    <input type="email" placeholder="Correo" name="correo" id="correo" ng-model="paciente.usuario.correo"  required>
+                    <input type="text" placeholder="Dirección" name="direccion" id="direccion" ng-model="paciente.usuario.direccion"  required>
+                    <div class="form-group">
+                        <label for="Region" class="col-md-6 control-label">REGION</label>
+                        <div>
+                            <select id="Region" ng-model="regionSeleccionada" ng-change="seleccionRegion();">
+                                <option ng-repeat="region in regiones" value="{{region}}" >{{region.nombre}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Provincia" class="col-md-6 control-label">PROVINCIA</label>
+                        <div>
+                            <select id="Provincia" ng-model="provinciaSeleccionada" ng-change="seleccionProvincia();">
+                                <option ng-repeat="provincia in provinciasSeleccionada" value="{{provincia}}" >{{provincia.nombre}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Comuna" class="col-md-6 control-label">COMUNA</label>
+                        <div>
+                            <select id="Comuna" ng-model="paciente.usuario.comuna">
+                                <option ng-repeat="comuna in comunasSeleccionada" value="{{comuna.id}}" >{{comuna.nombre}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prevision" class="col-md-6 control-label">PREVISIÓN</label>
+                        <div>
+                            <select id="prevision" ng-model="paciente.prevision">
+                                <option ng-repeat="prevision in previsiones" value="{{prevision}}" >{{prevision.nombre | uppercase}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Genero" class="col-md-6 control-label">GÉNERO</label>
+                        <div>
+                            <select id="Genero" ng-model="paciente.usuario.genero">
+                                <option value="M">MASCULINO</option>
+                                <option value="F">FEMENINO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaNacimiento" class="col-md-6 control-label">FECHA NACIMIENTO</label>
+                        <div>
+                            <input type="text" id="fechaNacimiento" name="fechaNacimiento" ng-model="paciente.usuario.fechaNacimiento"  required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="rut" class="col-md-6 control-label">RUT</label>
+                        <div>
+                            <input type="text" placeholder="Rut" name="rut" id="rut" ng-model="paciente.usuario.rut"  required>
+                            <p>*Ingrese el rut sin puntos ni guion.</p>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena" class="col-md-6 control-label">CONTRASEÑA</label>
+                        <div>
+                            <input type="password" name="contrasena" id="contrasena" ng-model="paciente.usuario.password"  ng-minlength="3"  ng-maxlength="12" required>
+                        </div>
+                    </div>
+                    <input type="submit" value="Registrarme" ng-click="registrarUsuario(paciente)" class="btn btn-default btn-rounded" >
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="after-booking-sec text-center">
+    <div class="container">
+        <h1>Después de reservar</h1>
+        <p class="lead">Al finalizar su reserva, recibirá un correo con la información de su reserva, 24 horas antes de
+            esta un
+            ejecutivo se comunicará para confirmar.</p>
+        <ul class="medicom-feature-list list-inline text-left">
+            <li><i class="fa fa-check medicom-check"></i>Profesionales capacitados en todas las areas.</li>
+            <li><i class="fa fa-check medicom-check"></i>Equipo médico de ultima generación.</li>
+            <li><i class="fa fa-check medicom-check"></i>Historial medico.</li>
+            <li><i class="fa fa-check medicom-check"></i>Comprometidos con su bienestar.</li>
+        </ul>
+    </div>
+</section>
+
+
+<div class="colourfull-row"></div>

@@ -9,9 +9,10 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Centro Medico Hipócrates</title>
+    <title>Centro Médico Hipócrates</title>
     <!-- template css-->
     <link rel="stylesheet" id="color" href="public/css/blue.css">
+    <link rel="stylesheet" href="public/css/app.css" >
     <link rel="stylesheet" href="public/css/medicom.css" >
     <link rel="stylesheet" href="public/css/bootstrap.css" >
     <link rel="stylesheet" href="public/css/anythingslider.css">
@@ -46,18 +47,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home.html"><h1>HIPOCRATES</h1></a>
+                <a class="navbar-brand" href="home.html"><h1>HIPÓCRATES</h1></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                 <ul id="navbar" class="nav navbar-nav">
-                    <li id="menuHome"><a href="#/home">Home</a></li>
-                    <li id="menuReserva3"><a href="#/reserva">Sobre nosotros</a></li>
-                    <li id="menuReserva1"><a href="#/reserva">Examenes</a></li>
-                    <li id="menuReserva2"><a href="#/reserva">Consultas</a></li>
+                    <li id="menuHome"><a href="#/home">Inicio</a></li>
+                    <li id="menuReserva3"><a href="#/home">Sobre nosotros</a></li>
+                    <li id="menuReserva1"><a href="#/home">Contacto</a></li>
                     <li id="menuReserva"><a href="#/reserva">Reservar</a></li>
-                    <li id="menuReserva4"><a href="#/reserva">Contacto</a></li>
+                    <li id="menuRegistro"><a href="#/registro">Registro</a></li>
+                    <li id="menuEntrar"><a href="#/ingresar">Entrar</a></li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -76,11 +77,11 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="footer-widget">
-                        <h4><span>Hipocrates</span></h4>
+                        <h4><span>Hipócrates</span></h4>
                         <ul class="footer-nav list-unstyled clearfix">
                             <li><a href="#."><i class="fa fa-long-arrow-right"></i>Home</a></li>
                             <li><a href="#."><i class="fa fa-long-arrow-right"></i>Sobre nosotros</a></li>
-                            <li><a href="#."><i class="fa fa-long-arrow-right"></i>Examenes</a></li>
+                            <li><a href="#."><i class="fa fa-long-arrow-right"></i>Exámenes</a></li>
                             <li><a href="#."><i class="fa fa-long-arrow-right"></i>Consultas</a></li>
                             <li><a href="#."><i class="fa fa-long-arrow-right"></i>Contacto</a></li>
                         </ul>
@@ -100,7 +101,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="footer-widget">
-                        <h4><span>Ultimos Tweets</span></h4>
+                        <h4><span>Últimos Tweets</span></h4>
                         <div class="twitter-widget">
                             <div class="tweet">
                                 <i class="fa fa-twitter"></i>
@@ -132,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <p class="copyright text-center">Copyright &copy; 2016 Hipocrates. All right reserved.</p>
+        <p class="copyright text-center">Copyright &copy; 2016 Hipócrates. All right reserved.</p>
         <!--div class="container">
             <div class="row">
                 <div class="col-md-2"><a href="#."><img src="public/image/footer-logo.jpg" alt="" title="Medicom Logo"></a>
@@ -158,8 +159,8 @@
 <!-- ANGULARJS -->
 <script type="text/javascript" src="public/js/angular/angular.min.js"></script>
 <script type="text/javascript" src="public/js/angular/angular-route.min.js"></script>
-<script type="text/javascript" src="public/js/angular/app/app.js"></script>
-<script type="text/javascript" src="public/js/angular/controllers/controllers.js"></script>
+<script type="text/javascript" src="public/js/angular/app/front/app.js"></script>
+<script type="text/javascript" src="public/js/angular/controllers/front/controllers.js"></script>
 <script type="text/javascript" src="public/js/angular/services/services.js"></script>
 <!---->
 <script type="text/javascript" src="public/js/template/jquery.js"></script>
@@ -171,12 +172,14 @@
 <script type="text/javascript" src="public/js/template/counter.js"></script>
 <script type="text/javascript" src="public/js/template/waypoints.js"></script>
 <script type="text/javascript" src="public/js/template/jquery.uniform.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="public/js/angular/app/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="public/js/angular/app/mensaje.js"></script>
 
+<script type="text/javascript" src="public/vendor/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+<script type="text/javascript" src="public/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="public/vendor/card/lib/js/jquery.card.js"></script>
+<script type="text/javascript" src="public/vendor/checkbo/src/0.1.4/js/checkBo.min.js"></script>
+<script type="text/javascript" src="public/vendor/chosen_v1.4.0/chosen.jquery.min.js"></script>
 
-
-
-
-</script>
 </body>
 </html>

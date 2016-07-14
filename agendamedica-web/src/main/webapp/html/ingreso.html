@@ -1,0 +1,58 @@
+
+<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+    <div class="overlay">
+        <div class="container">
+            <h1 class="entry-title">Ingresar</h1>
+            <p>Registrandote puedes ver tus examenes, reservar horas y ver tus atenciones</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="appointment-sec text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <figure><img src="public/image/appointment-img.jpg" alt="image" title="Appointment image"
+                             class="img-responsive lady1"></figure>
+            </div>
+            <div class="col-md-6">
+                <form id="fomularioRegistro" autocomplete="off">
+                <div class="appointment-form clearfix">
+                    <div class="form-group">
+                        <label for="rut" class="col-md-6 control-label">RUT</label>
+                        <div>
+                            <input autocomplete="off" type="text" placeholder="Rut" name="rut" id="rut" ng-model="usuario.rut"  required>
+                            <p>*Ingrese el rut sin puntos ni guion.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena" class="col-md-6 control-label">Contraseña</label>
+                        <div>
+                            <input autocomplete="off" type="password" name="contrasena" id="contrasena" ng-model="usuario.password"  required>
+                        </div>
+                    </div>
+                    <input type="button" value="Ingresar" ng-disabled="ingresoController.btnLogin" ng-click="logearUsuario(usuario)" class="btn btn-default btn-rounded" >
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="after-booking-sec text-center">
+    <div class="container">
+        <h1>Después de reservar</h1>
+        <p class="lead">Al finalizar su reserva, recibirá un correo con la información de su reserva, 24 horas antes de
+            esta un
+            ejecutivo se comunicará para confirmar.</p>
+        <ul class="medicom-feature-list list-inline text-left">
+            <li><i class="fa fa-check medicom-check"></i>Profesionales capacitados en todas las areas.</li>
+            <li><i class="fa fa-check medicom-check"></i>Equipo medico de ultima generación.</li>
+            <li><i class="fa fa-check medicom-check"></i>Historial médico.</li>
+            <li><i class="fa fa-check medicom-check"></i>Comprometidos con su bienestar.</li>
+        </ul>
+    </div>
+</section>
+
+
+<div class="colourfull-row"></div>

@@ -1,0 +1,33 @@
+<div class="panel">
+    <div class="panel-heading">HISTORIAL DE ATENCIONES</div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table data-sortable-initialized="true" class="table table-striped table-bordered table-hover table-condensed responsive mb0" data-sortable="">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha Reserva</th>
+                    <th>Fecha Atención</th>
+                    <th>Hora Atención</th>
+                    <th>Médico</th>
+                    <th>Especialidad</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="reserva in reservas">
+                    <td>{{reserva.id}}</td>
+                    <td>{{reserva.fechaReserva}}</td>
+                    <td>{{reserva.agenda.fecha}}</td>
+                    <td>{{reserva.agenda.turno.horaInicio}} - {{reserva.agenda.turno.horaFin}}</td>
+                    <td>{{reserva.agenda.doctor.usuario.nombres}} {{reserva.agenda.doctor.usuario.apellidoPaterno}} {{reserva.agenda.doctor.usuario.apellidoMaterno}}</td>
+                    <td>{{reserva.agenda.doctor.especialidad.nombre}}</td>
+                    <td>{{reserva.agenda.doctor.usuario.correo}}</td>
+                    <td>{{reserva.agenda.doctor.usuario.telefono}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

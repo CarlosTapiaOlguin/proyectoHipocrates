@@ -4,36 +4,105 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import java.sql.Date;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by Administrador on 26-05-2016.
  */
 @XmlRootElement
 @Entity
-@Table(name = "USUARIO")
+@Table(name = "USUARIOS")
 @XmlAccessorType(XmlAccessType.PROPERTY)
-public class Usuario {
+public class Usuario implements Serializable{
 
     @Id
+    @GeneratedValue(generator="SEQ_USUARIOS")
+    @SequenceGenerator(name="SEQ_USUARIOS",sequenceName="SEQ_USUARIOS", allocationSize=1)
     @Column(name = "ID")
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
-    @Column(name = "NOMBRE")
-    private String nombreCompleto;
+    @Column(name = "NOMBRES")
+    private String nombres;
 
-    @Column(name = "PASS")
-    private String password;
+    @Column(name = "APELLIDO_PATERNO")
+    private String apellidoPaterno;
 
-    @Column(name = "CORREO")
+    @Column(name = "APELLIDO_MATERNO")
+    private String apellidoMaterno;
+
+    @Column(name = "FECHA_NACIMIENTO")
+    private Date fechaNacimiento;
+
+    @Column(name = "TELEFONO")
+    private String telefono;
+
+    @Column(name = "EMAIL")
     private String correo;
 
-    public String getPassword() {
-        return password;
+    @Column(name = "DIRECCION")
+    private String direccion;
+
+    @Column(name = "RUT")
+    private String rut;
+
+    @Column(name = "PASSWORD")
+    private String password;
+
+    @Column(name = "GENERO")
+    private String genero;
+
+    @Column(name = "COMUNA_ID")
+    private int comuna;
+
+    public int getId() {
+        return id;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
+
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getCorreo() {
@@ -44,21 +113,43 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public int getId() {
-        return id;
+    public String getRut() {
+        return rut;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRut(String rut) {
+        this.rut = rut;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public int getComuna() {
+        return comuna;
+    }
+
+    public void setComuna(int comuna) {
+        this.comuna = comuna;
+    }
 }

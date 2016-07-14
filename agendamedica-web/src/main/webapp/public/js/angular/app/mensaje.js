@@ -1,47 +1,70 @@
 function showExito(mensaje) {
-    $.alert(mensaje, {
-        title: "Exito",
-        closeTime: 5000,
-        autoClose: true,
-        position: ["top-right"],
-        withTime: false,
-        type: "success",
-        isOnly: false
+    $.notify({
+        // options
+        message: mensaje
+    },{
+        // settings
+        type: 'success',
+        delay: 2000,
+        template : '<div class="growl growl-notice growl-large">'+
+        '<div data-notify="dismiss" class="myclose">X</div>'+
+        '<div class="growl-title">Exito</div>'+
+        '<div class="growl-message">{2}</div>'+
+        '</div>'
     });
 }
 
 function showError(mensaje) {
-    $.alert(mensaje, {
-        title: "Error",
-        closeTime: 5000,
-        autoClose: true,
-        position: ["top-right"],
-        withTime: false,
-        type: "danger",
-        isOnly: false
+    $.notify({
+        // options
+        message: mensaje
+    },{
+        // settings
+        type: 'danger',
+        delay: 2000,
+        template : '<div class="growl growl-error growl-large">'+
+        '<div data-notify="dismiss" class="myclose">X</div>'+
+        '<div class="growl-title">Error</div>'+
+        '<div class="growl-message">{2}</div>'+
+        '</div>'
     });
 }
 
 function showAdvertencia(mensaje) {
-    $.alert(mensaje, {
-        title: "Advertencia",
-        closeTime: 5000,
-        autoClose: true,
-        position: ["top-right"],
-        withTime: false,
-        type: "warning",
-        isOnly: false
+    $.notify({
+        // options
+        message: mensaje
+    },{
+        // settings
+        type: 'warning',
+        delay: 2000,
+        template : '<div class="growl growl-warning growl-large">'+
+        '<div data-notify="dismiss" class="myclose">X</div>'+
+        '<div class="growl-title">Advertencia</div>'+
+        '<div class="growl-message">{2}</div>'+
+        '</div>'
     });
 }
 
 function showInfo(mensaje) {
-    $.alert(mensaje, {
-        title: "Informacion",
-        closeTime: 5000,
-        autoClose: true,
-        position: ["top-right"],
-        withTime: false,
-        type: "info",
-        isOnly: false
+
+    $.notify({
+        // options
+        message: mensaje
+    },{
+        // settings
+        type: 'info',
+        delay: 2000,
+        template : '<div class="growl growl-default growl-large">'+
+        '<div data-notify="dismiss" class="myclose">X</div>'+
+        '<div class="growl-title">Informaci\u00f3n</div>'+
+        '<div class="growl-message">{2}</div>'+
+        '</div>'
+
     });
+}
+
+function cerrarSession() {
+    sessionStorage.removeItem("usuario");
+    window.location.href = "/agendamedica/index.html#/home";
 }

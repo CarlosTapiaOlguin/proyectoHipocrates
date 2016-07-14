@@ -3,9 +3,19 @@
     <persistence-unit name="Transaccion" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>jdbc/agendamedica</jta-data-source>
-        <class>cl.duoc.agendamedica.modelo.Cliente</class>
+        <class>cl.duoc.agendamedica.modelo.Agenda</class>
+        <class>cl.duoc.agendamedica.modelo.Turno</class>
         <class>cl.duoc.agendamedica.modelo.Doctor</class>
+        <class>cl.duoc.agendamedica.modelo.Reserva</class>
+        <class>cl.duoc.agendamedica.modelo.ReservaInfo</class>
         <class>cl.duoc.agendamedica.modelo.Usuario</class>
+        <class>cl.duoc.agendamedica.modelo.Paciente</class>
+        <class>cl.duoc.agendamedica.modelo.Prevision</class>
+        <class>cl.duoc.agendamedica.modelo.Comuna</class>
+        <class>cl.duoc.agendamedica.modelo.Region</class>
+        <class>cl.duoc.agendamedica.modelo.Provincia</class>
+        <class>cl.duoc.agendamedica.modelo.Especialidad</class>
+        <class>cl.duoc.agendamedica.modelo.EspecialidadNombre</class>
         <properties>
             <property name="eclipselink.target-server" value="WebLogic_10" />
             <property name="eclipselink.logging.level" value="FINEST" />

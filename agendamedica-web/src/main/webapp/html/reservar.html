@@ -1,9 +1,10 @@
+
 <section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
     <div class="overlay">
         <div class="container">
             <h1 class="entry-title">Reserva de horas</h1>
-            <p>Para reservar seleccione el tipo de prestacion, si es consulta debe seleccionar el profesional, si es
-                examen el tipo de examen a realizar.</p>
+            <p>Para reservar seleccione el tipo de prestación, si es consulta debe seleccionar el profesional, si es
+                exámen seleccionar el tipo del mismo a realizar</p>
         </div>
     </div>
 </section>
@@ -19,40 +20,49 @@
             <div class="col-md-6">
                 <div class="appointment-form clearfix">
                     <div class="form-group">
-                        <label for="inputPrestacion" class="col-md-6 control-label">TIPO PRESTACION</label>
+                        <label for="inputPrestacion" class="col-md-6 control-label">TIPO PRESTACIÓN</label>
                         <div>
-                            <select id="inputPrestacion" ng-model="prestacionSeleccionada" ng-change="logicaPrestacion()">
-                                <option id="CONSULTA">CONSULTA MEDICA</option>
-                                <option id="EXAMEN">EXAMEN DE LABORATORIO</option>
+                            <select id="inputPrestacion" ng-model="prestacionSeleccionada"
+                                    ng-change="logicaPrestacion()">
+                                <option id="CONSULTA" selected>CONSULTA MÉDICA</option>
+                                <option id="EXAMEN">EXÁMEN DE LABORATORIO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="tipoEspecialidad" class="form-group">
+                        <label for="inputEspecialidad" class="col-md-6 control-label">ESPECIALIDAD</label>
+                        <div>
+                            <select id="inputEspecialidad" ng-model="usuariosEspecialidad" ng-change="actualizarMedicos();">
+                                <option ng-repeat="esp in especialidadesMedicas" value="{{esp.usuarios}}">
+                                    {{esp.nombre | uppercase}}
+                                </option>
                             </select>
                         </div>
                     </div>
                     <div id="tipoProfesional" class="form-group">
-                        <label for="inputProfecional" class="col-md-6 control-label">PROFESIONAL</label>
+                        <label for="inputProfesional" class="col-md-6 control-label">PROFESIONAL</label>
                         <div>
-                            <select id="inputProfecional">
-                                <option ng-repeat="doctor in doctors" value="{{id}}">
-                                    {{doctor.nombreCompleto}}
+                            <select id="inputProfesional">
+                                <option ng-repeat="usuario in doctoresPorEspecialidad" value="{{usuario.id}}">
+                                    {{usuario.nombres +" "+ usuario.apellidoPaterno +" "+ usuario.apellidoMaterno | uppercase}}
                                 </option>
                             </select>
                         </div>
                     </div>
                     <div id="tipoPrestacion" class="form-group">
-                        <label for="inputExamen" class="col-md-6 control-label">EXAMEN</label>
+                        <label for="inputExamen" class="col-md-6 control-label">EXÁMEN</label>
                         <div>
                             <select id="inputExamen">
-                                <option>ENDOSCOPIA</option>
-                                <option>ENDOSCOPIA</option>
-                                <option>ENDOSCOPIA</option>
-                                <option>ENDOSCOPIA</option>
-                                <option>ENDOSCOPIA</option>
+                                <option ng-repeat="esp in especialidadesLaboratorio" value="{{esp.id}}">
+                                    {{esp.nombre | uppercase}}
+                                </option>
                             </select>
                         </div>
                     </div>
-                    <br />
-                    <br />
+                    <br/>
+                    <br/>
+                    <input type="text" placeholder="Rut" id="rutUsuario" name="rutUsuario" ng-blur="buscarRut(this)" ng-model="rutUsuario">
                     <input type="text" placeholder="Nombre">
-                    <input type="text" placeholder="Rut">
                     <input type="email" placeholder="Correo">
                     <input type="text" placeholder="Telefono">
                     <input type="text" id="datepicker" placeholder="Fecha">
@@ -74,13 +84,14 @@
 
 <section class="after-booking-sec text-center">
     <div class="container">
-        <h1>Despues de reservar</h1>
-        <p class="lead">Al finalizar su reserva, recibira un correo con la información de su reserva, 24 horas antes de esta un
-        ejecutivo se comunicara para confirmar.</p>
+        <h1>Después de reservar</h1>
+        <p class="lead">Al finalizar su reserva, recibirá un correo con la información de su reserva, 24 horas antes de
+            esta un
+            ejecutivo se comunicará para confirmar.</p>
         <ul class="medicom-feature-list list-inline text-left">
-            <li><i class="fa fa-check medicom-check"></i>Profesionales capacitados en todas las areas.</li>
-            <li><i class="fa fa-check medicom-check"></i>Equipo medico de ultima generacion.</li>
-            <li><i class="fa fa-check medicom-check"></i>Historial medico.</li>
+            <li><i class="fa fa-check medicom-check"></i>Profesionales capacitados en todas las áreas.</li>
+            <li><i class="fa fa-check medicom-check"></i>Equipo médico de ultima generación.</li>
+            <li><i class="fa fa-check medicom-check"></i>Historial médico.</li>
             <li><i class="fa fa-check medicom-check"></i>Comprometidos con su bienestar.</li>
         </ul>
     </div>

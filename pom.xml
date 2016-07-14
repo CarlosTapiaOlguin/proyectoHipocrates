@@ -6,7 +6,7 @@
     <artifactId>agendamedica</artifactId>
     <version>0.0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>NOMBRE_PROYECTO_agendamedica</name>
+    <name>HIPOCRATES_agendamedica</name>
     <build>
         <plugins>
             <plugin>
