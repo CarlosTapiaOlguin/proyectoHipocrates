@@ -4,6 +4,7 @@ import cl.duoc.agendamedica.dao.UsuarioDAO;
 import cl.duoc.agendamedica.exceptions.MessageException;
 import cl.duoc.agendamedica.modelo.Paciente;
 import cl.duoc.agendamedica.modelo.Usuario;
+import cl.duoc.agendamedica.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,6 +30,10 @@ public class UsuarioController {
     @Transactional
     @RequestMapping(value = "/registro", method = RequestMethod.POST, headers = "Accept=application/json")
     public void registrarUsuario(@RequestBody Paciente paciente, HttpServletResponse response) throws IOException {
+        if(!Utils.validarRut(paciente.getUsuario().getRut())){
+            response.sendError(response.SC_BAD_REQUEST, "El Rut ingresado no es valido.");
+            return;
+        }
         try {
             usuarioDAO.guardarUsuario(paciente);
         }catch (Exception e){
@@ -40,6 +45,10 @@ public class UsuarioController {
     @RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/json", produces = MediaType.APPLICATION_JSON_VALUE)
     public Paciente loginUsuario(@RequestBody Usuario usuario, HttpServletResponse response) throws IOException {
         Paciente usuario_rtn = null;
+        if(!Utils.validarRut(usuario.getRut())){
+            response.sendError(response.SC_BAD_REQUEST, "El Rut ingresado no es valido.");
+            return usuario_rtn;
+        }
         try {
             usuario_rtn =  usuarioDAO.findUsuarioByRutAndPassword(usuario);
         } catch (MessageException e) {

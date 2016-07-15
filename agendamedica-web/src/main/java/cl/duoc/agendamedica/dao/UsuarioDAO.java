@@ -22,9 +22,8 @@ public class UsuarioDAO extends agendamedicaDAO {
 
 
     public List<Usuario> findUsuarioByRut(String rut) {
-        Query query = em.createQuery("Select u from Usuario u WHERE u.usuario = :rut");
+        Query query = em.createQuery("Select u from Usuario u WHERE u.rut = :rut");
         query.setParameter("rut", rut);
-
         return query.getResultList();
     }
 
@@ -43,7 +42,11 @@ public class UsuarioDAO extends agendamedicaDAO {
         }
     }
 
-    public void guardarUsuario(Paciente paciente) {
+    public void guardarUsuario(Paciente paciente) throws MessageException {
+        List<Usuario> usuario = findUsuarioByRut(paciente.getUsuario().getRut());
+        if (!usuario.isEmpty()){
+            throw new MessageException("El Rut ingresado ya se encuentra registrado.");
+        }
         em.merge(paciente);
         em.flush();
     }
